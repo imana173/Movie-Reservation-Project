@@ -7,7 +7,7 @@ describe('MoviesService', () => {
 
   beforeEach(async () => {
     global.fetch = jest.fn().mockResolvedValue({
-      json: jest.fn().mockResolvedValue({ results: [] }), // ✅ Mock de fetch()
+      json: jest.fn().mockResolvedValue({ results: [] }), 
     });
 
     const module: TestingModule = await Test.createTestingModule({
@@ -21,8 +21,8 @@ describe('MoviesService', () => {
         },
       ],
     })
-      .overrideProvider('HttpService') // ✅ Ignore `HttpService`
-      .useValue(null) // ✅ Dit à NestJS qu'il n'y a pas besoin de `HttpService`
+      .overrideProvider('HttpService') 
+      .useValue(null) 
       .compile();
 
     service = module.get<MoviesService>(MoviesService);

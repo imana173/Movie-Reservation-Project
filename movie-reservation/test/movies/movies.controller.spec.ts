@@ -13,7 +13,7 @@ describe('MoviesController', () => {
         {
           provide: MoviesService,
           useValue: {
-            getMovies: jest.fn().mockResolvedValue([]), // ✅ Mock `MoviesService`
+            getMovies: jest.fn().mockResolvedValue([]), 
           },
         },
       ],

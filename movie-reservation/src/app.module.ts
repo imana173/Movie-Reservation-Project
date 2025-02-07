@@ -17,14 +17,14 @@ import { ReservationModule } from './reservation/reservation.module';
     }),
     HttpModule,
 
-    // 📌 Connexion via URI PostgreSQL avec SSL activé
+    
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL, // 📌 Utilisation de l'URI
+      url: process.env.DATABASE_URL, 
       autoLoadEntities: true,
-      synchronize: true, // 🚨 Désactiver après le premier déploiement
+      synchronize: true,
       ssl: {
-        rejectUnauthorized: false, // 📌 🔥 Activation du SSL pour Render
+        rejectUnauthorized: false,
       },
     }),
 
